@@ -63,9 +63,7 @@ function makeMove(button, buttonNo) {
   if (playerWon(row, col, playerNumber)) {
     document.body.classList.add("win-animation"); // Add win animation
     setTimeout(function () {
-      showNotification(
-        `Game Over: ${playerNumber === 1 ? "Pumpkin" : "Ghost"} Wins!`
-      );
+      showNotification(`${playerNumber === 1 ? "Pumpkin" : "Ghost"} Wins!`);
     }, 500);
     return;
   }
