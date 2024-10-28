@@ -1,0 +1,275 @@
+@font-face {
+  font-family: "font";
+  src: url(asset/CreepsterRegular.ttf);
+}
+
+* {
+  font-family: "font"; /* Include this font in your HTML */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Body */
+body {
+  background-color: #222;
+  background-image: url("./asset/bg.jpg"); /* Replace with your background image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff8dc;
+}
+
+/* Main Container */
+#main-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Player Details */
+#player {
+  background-color: rgba(
+    255,
+    155,
+    42,
+    0.9
+  ); /* Slightly transparent for spooky feel */
+  border: 8px solid #1a1a1a;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 20px;
+  width: 550px;
+  box-shadow: 0 0 10px #fa6a05; /* Glowing effect */
+}
+
+#player-type {
+  color: #1a1a1a;
+  letter-spacing: 5px;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Grid */
+#grid {
+  background-color: #1a1a1a;
+  border: 3.5px solid #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 2px 3px 7px #fa6a05;
+  margin-top: 50px;
+  max-width: 600px;
+  padding: 3px;
+}
+
+/* Grid Row */
+.row {
+  display: flex;
+}
+
+/* Grid Column */
+.col {
+  align-items: center;
+  background-color: rgba(
+    255,
+    155,
+    42,
+    0.9
+  ); /* Transparent for Halloween theme */
+  border: 1px solid #fa6a05;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  height: 75px;
+  margin: 5px;
+  width: 75px;
+  transition: transform 0.3s; /* Add a scale effect */
+}
+
+.col:hover {
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Buttons */
+.btn {
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#reset-btn {
+  background-color: transparent;
+  border: 2px solid #1a1a1a;
+  border-radius: 5px;
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  margin: 50px 0;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  transition: background-color 0.7s, color 0.7s;
+}
+
+#reset-btn:hover {
+  background-color: #fa6a05;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background-color 0.7s, color 0.7s;
+}
+
+.player-icon {
+  height: 75px;
+  width: 75px;
+}
+
+/* Notification Modal Styles */
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 155, 42, 0.9);
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 300px;
+  height: 150px;
+  z-index: 1000;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  transition: opacity 0.5s ease;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: 2px solid #1a1a1a;
+  border-radius: 5px;
+  color: #1a1a1a;
+  margin: 10px 0;
+  padding: 10px 40px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  transition: background-color 0.7s, color 0.7s;
+}
+
+.close-btn:hover {
+  background-color: #e64a19; /* Darker shade on hover */
+}
+
+.close-btn:focus {
+  outline: none; /* Remove default outline */
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevent clicks when hidden */
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto; /* Allow clicks when visible */
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+  #grid {
+    width: 500px;
+  }
+
+  .col {
+    height: 62px;
+    margin: 4px;
+    width: 62px;
+  }
+
+  #player {
+    width: 450px;
+  }
+
+  #reset-btn {
+    font-size: 2rem;
+  }
+
+  .player-icon {
+    height: 62px;
+    width: 62px;
+  }
+
+  .close-btn {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  #grid {
+    width: 400px;
+  }
+
+  .col {
+    height: 50px;
+    margin: 3px;
+    width: 50px;
+  }
+
+  #player {
+    width: 350px;
+  }
+
+  #reset-btn {
+    font-size: 1rem;
+  }
+
+  .btn-player-1 {
+    height: 30px;
+    width: 30px;
+  }
+
+  .btn-player-2 {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  #grid {
+    width: 90%;
+  }
+
+  .col {
+    height: 40px;
+    margin: 2px;
+  }
+
+  #player {
+    align-items: center;
+    display: flex;
+    border-width: 5px;
+    justify-content: center;
+    height: 30px;
+    width: 78%;
+  }
+
+  #player-type {
+    font-size: 1.8 rem;
+  }
+
+  #reset-btn {
+    font-size: 1.8rem;
+  }
+
+  .close-btn {
+    font-size: 1.8rem;
+  }
+
+  .player-icon {
+    height: 40px;
+    width: 40px;
+  }
+}
